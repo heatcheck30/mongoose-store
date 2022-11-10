@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+//when you move dependencies around and refactor just go ahead and delete ones that are no longer be used in the file
 const seedData = require('./models/seed.js')
 const Product = require('./models/product.js')
 const methodOverride = require("method-override")

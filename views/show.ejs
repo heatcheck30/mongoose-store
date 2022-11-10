@@ -54,7 +54,7 @@
         </h3>
         <h3>Quantity: <%= products.qty%>
         </h3>
-
+<!-- i really like the low stock condition, nice touch -->
         <% if(products.qty> 5) { %>
             <h3> In Stock <form action="/products/order/<%= products._id%>?_method=PUT" method="POST">
                     <input type="submit" value="BUY" />

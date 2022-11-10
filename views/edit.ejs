@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Edit Products</h1>
-
+<!-- for edit forms i would use value instead of placeholder so that the user can keep some of the existing data without having to retype it all -->
     <form action="/products/<%= foundProduct.id %>?_method=PUT" method="POST">
        Name:<br><input type="text" name="name" placeholder="<%=foundProduct.name%>" required><br>
        Description:<br><input type="text" name="description" placeholder="<%=foundProduct.description%>" required> <br>

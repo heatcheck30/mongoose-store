@@ -35,8 +35,9 @@ router.put("/:id", (req, res) => {
   Product.findByIdAndUpdate(
     req.params.id,req.body, (err, product) => {
       // decrease the qty
-      product.qty -= 1
-      product.save()
+      //i would remove this and only keep it in the buy button route
+      //product.qty -= 1
+      //product.save()
       res.redirect(`/products/${req.params.id}`)
     })
   })
