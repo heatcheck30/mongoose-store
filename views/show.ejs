@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            background-color: antiquewhite;
+
+        }
+
+        button,
+        input {
+            background-color: #4CAF50;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px 5px;
+        }
+
+        button:hover,
+        input:hover {
+            background-color: rgb(164, 59, 59);
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgba(59, 7, 78, 0.862);
+            background-color: inherit !important;
+        }
+        .main {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <img src="<%=products.img%>">
+        <h3>Name: <%=products.name%>
+        </h3>
+        <h3>Description: <%= products.description%>
+        </h3>
+        <h3>Price: <%= products.price%>
+        </h3>
+        <h3>Quantity: <%= products.qty%>
+        </h3>
+
+        <% if(products.qty> 5) { %>
+            <h3> In Stock <form action="/products/order/<%= products._id%>?_method=PUT" method="POST">
+                    <input type="submit" value="BUY" />
+                </form>
+            </h3>
+
+            <%} else if(products.qty> 0) {%>
+                <h4> Low in Stock
+                    <form action="/products/order/<%= products._id%>?_method=PUT" method="POST">
+                        <input type="submit" value="BUY" />
+                </h4>
+                <%} else {%>
+                    <h4> Out of Stock</h4>
+                    <% } %>
+
+                        <form action="/products/<%= products._id%>?_method=DELETE" method="post">
+                            <input type="submit" value="DELETE">
+                        </form>
+
+                        <button><a href="/products/<%=products._id%>/edit">UPDATE</a></button> <br>
+
+
+                    
+                        <button><a href="/products"> Home</a></button>
+    </div>
+</body>
+
+</html>

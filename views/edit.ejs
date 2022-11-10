@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <h1>Edit Products</h1>
+
+    <form action="/products/<%= foundProduct.id %>?_method=PUT" method="POST">
+       Name:<br><input type="text" name="name" placeholder="<%=foundProduct.name%>" required><br>
+       Description:<br><input type="text" name="description" placeholder="<%=foundProduct.description%>" required> <br>
+       URL Link:<br><input type="url" name="img" placeholder="<%=foundProduct.img%>" required><br>
+       Quantity:<br><input type="number" name="qty" placeholder="<%=foundProduct.qty%>" required> <br>
+       Price:<br><input type="number" name="price" placeholder="<%=foundProduct.price%>" required><br>
+    
+        <input type="submit" value="Edit Products">
+    </form>
+
+</body>
+</html>
